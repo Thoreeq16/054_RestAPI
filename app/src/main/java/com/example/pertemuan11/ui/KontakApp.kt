@@ -45,6 +45,8 @@ fun KontakApp(
     }
 }
 
+fun TopAppBarKontak() {}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
