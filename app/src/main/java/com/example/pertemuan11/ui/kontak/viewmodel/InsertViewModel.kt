@@ -43,3 +43,7 @@ fun InsertUiEvent.toKontak(): Kontak = Kontak(
     alamat = alamat,
     telpon = nohp
 )
+
+fun Kontak.toUiStateKontak(): InsertUiState = InsertUiState(
+    insertUiEvent = toInsertUiEvent()
+)
