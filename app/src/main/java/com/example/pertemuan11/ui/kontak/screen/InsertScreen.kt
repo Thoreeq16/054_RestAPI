@@ -93,3 +93,7 @@ fun EntryKontakBody(
         }
     }
 }
+
+
+@Composable
+fun FormInputSiswa() {}
