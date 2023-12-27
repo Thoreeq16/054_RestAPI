@@ -1,6 +1,8 @@
 package com.example.pertemuan11.ui.kontak.viewmodel
 
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pertemuan11.model.Kontak
@@ -46,4 +48,11 @@ fun InsertUiEvent.toKontak(): Kontak = Kontak(
 
 fun Kontak.toUiStateKontak(): InsertUiState = InsertUiState(
     insertUiEvent = toInsertUiEvent()
+)
+
+fun Kontak.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    nohp = telpon
 )
