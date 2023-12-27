@@ -20,6 +20,7 @@ import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -47,7 +48,7 @@ object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
     override val titleRes = "Kontak"
 }
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     navigateToItemEntry: () -> Unit,
@@ -74,7 +75,17 @@ fun HomeScreen(
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add Kontak")
             }
         },
-    ) {}
+    ) {
+            innerPadding ->
+        HomeStatus(
+            kontakUIState = viewModel.kontakUIState,
+            retryAction = { viewModel.getKontak() }, modifier = Modifier.padding(innerPadding),
+            onDetailClick = onDetailClick, onDeleteClick = {
+                viewModel.deleteKontak(it.id)
+                viewModel.getKontak()
+            }
+        )
+    }
 }
 
 @Composable
