@@ -1,3 +1,6 @@
 package com.example.pertemuan11.navigation
 
-interface DestinasiNavigasi {}
+interface DestinasiNavigasi {
+    val route: String
+    val titleRes: String
+}
