@@ -3,6 +3,7 @@ package com.example.pertemuan11.ui.kontak.viewmodel
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pertemuan11.model.Kontak
 import com.example.pertemuan11.repository.KontakRepository
 import kotlinx.coroutines.launch
 
@@ -34,4 +35,11 @@ data class InsertUiEvent(
     val nama: String = "",
     val alamat: String = "",
     val nohp: String = ""
+)
+
+fun InsertUiEvent.toKontak(): Kontak = Kontak(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telpon = nohp
 )
