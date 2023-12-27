@@ -29,9 +29,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pertemuan11.R
 import com.example.pertemuan11.model.Kontak
 import com.example.pertemuan11.navigation.DestinasiNavigasi
+import com.example.pertemuan11.ui.PenyediaViewModel
+import com.example.pertemuan11.ui.home.viewmodel.HomeViewModel
 import com.example.pertemuan11.ui.home.viewmodel.KontakUIState
 
 object DestinasiHome : DestinasiNavigasi {
@@ -40,7 +43,12 @@ object DestinasiHome : DestinasiNavigasi {
 }
 
 @Composable
-fun HomeScreen() {}
+fun HomeScreen(
+    navigateToItemEntry: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDetailClick: (Int) -> Unit = {},
+    viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
+) {}
 
 @Composable
 fun HomeStatus(
