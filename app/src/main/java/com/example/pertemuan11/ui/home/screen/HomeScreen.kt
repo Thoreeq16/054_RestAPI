@@ -34,7 +34,7 @@ import com.example.pertemuan11.model.Kontak
 import com.example.pertemuan11.ui.home.viewmodel.KontakUIState
 
 @Composable
-fun HomeScreen(
+fun HomeStatus(
     kontakUIState: KontakUIState, retryAction: () -> Unit, modifier: Modifier = Modifier
 ) {
 
