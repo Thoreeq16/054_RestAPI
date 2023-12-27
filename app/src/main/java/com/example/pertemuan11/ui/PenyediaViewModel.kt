@@ -8,12 +8,12 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.pertemuan11.KontakAplikation
 import com.example.pertemuan11.ui.home.viewmodel.HomeViewModel
+import com.example.pertemuan11.ui.kontak.viewmodel.InsertViewModel
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
-        initializer {
-            HomeViewModel(aplikasiKontak().container.KontakRepository)
-        }
+        initializer { HomeViewModel(aplikasiKontak().container.KontakRepository) }
+        initializer { InsertViewModel(aplikasiKontak().container.KontakRepository) }
     }
 }
 
