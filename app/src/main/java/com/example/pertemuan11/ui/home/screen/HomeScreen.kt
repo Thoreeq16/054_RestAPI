@@ -40,6 +40,9 @@ object DestinasiHome : DestinasiNavigasi {
 }
 
 @Composable
+fun HomeScreen() {}
+
+@Composable
 fun HomeStatus(
     kontakUIState: KontakUIState,
     retryAction: () -> Unit,
